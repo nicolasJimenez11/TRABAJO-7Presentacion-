@@ -13,7 +13,7 @@ gramatica = {
 
 no_terminales = list(gramatica.keys())
 
-# ---------------- PRIMEROS ----------------
+# PRIMEROS 
 def calcular_primeros():
     primeros = defaultdict(set)
 
@@ -39,7 +39,7 @@ def calcular_primeros():
                     primeros[nt].add("ε")
     return primeros
 
-# ---------------- SIGUIENTES ----------------
+# SIGUIENTES 
 def calcular_siguientes(primeros):
     siguientes = defaultdict(set)
     siguientes["S"].add("$")
@@ -64,7 +64,7 @@ def calcular_siguientes(primeros):
                         follow_temp = {simbolo}
     return siguientes
 
-# ---------------- PREDICCIÓN ----------------
+# PREDICCIÓN 
 def calcular_prediccion(primeros, siguientes):
     prediccion = {}
 
